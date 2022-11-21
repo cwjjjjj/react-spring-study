@@ -11,6 +11,18 @@ export default function Home() {
     from: { x: 0 },
     to: { x: 100 },
   });
+  console.log(springs);
+
+  const [styles, api] = useSpring(() => ({
+    x: 0,
+    y: 0,
+    backgroundColor: "#ff0000",
+    scale: [1, 1, 1],
+    config: {
+      precision: 0.0001,
+    },
+  }));
+  console.log({ styles, api });
 
   return (
     <div
@@ -30,7 +42,7 @@ export default function Home() {
           height: 80,
           background: "#ff6d6d",
           borderRadius: 8,
-          ...springs,
+          // ...springs,
         }}
       />
     </div>
